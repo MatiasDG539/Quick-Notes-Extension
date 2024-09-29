@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Quick Notes",
   "version": "1.0",
-  "description": "Una extensión para tomar notas rápidas.",
+  "description": "Extensión que permite a los usuarios tomar notas rápidas desde cualquier ventana.",
   "action": {
     "default_popup": "index.html",
     "default_icon": {

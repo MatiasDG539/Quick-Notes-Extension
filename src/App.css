@@ -1,0 +1,166 @@
+/* Estilos globales */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Contenedor principal */
+.app-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Botón central */
+.create-note-btn {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.create-note-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo de la nota adhesiva */
+.sticky-note {
+  background-color: #fffb91;
+  border: 2px solid #e1d65b;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input para el título de la nota */
+.note-title-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #fffb91;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: 1px #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Textarea para el contenido de la nota */
+.note-content-textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+  background-color: #fffb91;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+}
+
+/* Botones dentro del modal */
+.close-modal-btn,
+.add-note-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-note-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-note-btn:hover {
+  background-color: #218838;
+}
+
+.close-modal-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.close-modal-btn:hover {
+  background-color: #c82333;
+}
+
+/* Lista de notas */
+.note-list {
+  list-style: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-item h3 {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.note-item p {
+  margin: 0;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

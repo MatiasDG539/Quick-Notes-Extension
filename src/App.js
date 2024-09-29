@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import NoteList from "./components/NoteList";
 
-function App() {
+const App = () => {
+  const [notes, setNotes] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    setNotes(savedNotes);
+  }, []);
+
+  const addNote = () => {
+    const newNote = { id: Date.now(), text: inputValue };
+    const updatedNotes = [...notes, newNote];
+    setNotes(updatedNotes);
+    setInputValue("");
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+  };
+
+  const deleteNote = (id) => {
+    const updatedNotes = notes.filter((note) => note.id !== id);
+    setNotes(updatedNotes);
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Quick Notes</h1>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Escribe tu nota"
+      />
+      <button onClick={addNote}>Agregar Nota</button>
+      <NoteList notes={notes} onDelete={deleteNote} />
     </div>
   );
-}
+};
 
 export default App;
